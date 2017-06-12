@@ -1504,6 +1504,10 @@ ActiveRecord::Schema.define(version: 20170909082819) do
     t.datetime "deleted_at"
     t.integer  "media_reactions_count",                   default: 0,           null: false
     t.integer  "status",                                  default: 1,           null: false
+    t.boolean  "never_signed_in_email_sent",              default: false,       null: false
+    t.boolean  "first_inactive_email_sent",               default: false,       null: false
+    t.boolean  "second_inactive_email_sent",              default: false,       null: false
+    t.boolean  "third_inactive_email_sent",               default: false,       null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
